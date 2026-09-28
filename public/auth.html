@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Log in — Aditi Enterprises</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <div class="auth-brand">
+    <a class="wordmark" href="/">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="34" height="34" rx="7" fill="#FFFFFF" fill-opacity="0.06"/>
+        <rect x="14" y="7" width="6" height="3" rx="1.2" fill="#D9782B"/>
+        <rect x="12" y="10" width="10" height="17" rx="3.5" fill="#FFFFFF"/>
+        <rect x="12" y="15.5" width="10" height="2" fill="#1F6F78"/>
+      </svg>
+      <span><span data-biz-name>Aditi Enterprises</span><small style="color:#9FB0BA;">Cylinder supply &amp; tracking</small></span>
+    </a>
+    <div>
+      <p class="tagline">One record for every cylinder, order and delivery — from stock to refill.</p>
+    </div>
+    <div class="meta">Internal system · runs on this local server</div>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <div class="tabs" id="role-tabs">
+        <button class="tab" data-role="customer">Customer</button>
+        <button class="tab" data-role="member">Staff</button>
+        <button class="tab" data-role="delivery">Delivery</button>
+        <button class="tab" data-role="admin">Admin</button>
+      </div>
+
+      <div class="subtabs" id="view-tabs">
+        <button class="subtab" data-view="login">Log in</button>
+        <button class="subtab" data-view="signup">Sign up</button>
+      </div>
+
+      <div id="banner"></div>
+
+      <!-- LOGIN FORM -->
+      <form id="login-form" class="form-view">
+        <div class="field">
+          <label for="login-identifier">Email or phone number</label>
+          <input id="login-identifier" name="identifier" required autocomplete="username" />
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </form>
+
+      <!-- SIGNUP FORM -->
+      <form id="signup-form" class="form-view" enctype="multipart/form-data">
+        <div class="field-row">
+          <div class="field">
+            <label for="su-name">Full name</label>
+            <input id="su-name" name="full_name" required />
+          </div>
+          <div class="field">
+            <label for="su-nick">Nickname <span style="font-weight:400;">(optional)</span></label>
+            <input id="su-nick" name="nickname" />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="su-phone">Phone number</label>
+            <input id="su-phone" name="phone" inputmode="tel" />
+          </div>
+          <div class="field">
+            <label for="su-email">Email</label>
+            <input id="su-email" name="email" type="email" />
+          </div>
+        </div>
+        <div class="field-hint" style="margin-top:-0.6em;margin-bottom:1em;">Provide at least one of phone or email — you'll use it to log in.</div>
+
+        <div class="field">
+          <label for="su-address">Address</label>
+          <input id="su-address" name="address" />
+        </div>
+
+        <div class="field" id="role-in-business-field">
+          <label for="su-role">Role in the business</label>
+          <input id="su-role" name="role_in_business" placeholder="e.g. Manager, Warehouse Staff, Owner" />
+        </div>
+
+        <div class="field" id="customer-type-field" style="display:none;">
+          <label for="su-customer-type">Industry / customer type</label>
+          <select id="su-customer-type" name="customer_type">
+            <option value="">Select one…</option>
+            <option>Hospital</option>
+            <option>Welding and Metal Fabrication</option>
+            <option>Chemical Plants</option>
+            <option>Mountaineering</option>
+            <option>Scuba Diving</option>
+            <option>Marine Operations</option>
+          </select>
+        </div>
+
+        <div class="field" id="invite-code-field">
+          <label for="su-invite">Invite code</label>
+          <input id="su-invite" name="invite_code" />
+          <div class="field-hint">Given to you by an existing admin — required for staff, delivery and admin accounts.</div>
+        </div>
+
+        <div class="field">
+          <label for="su-photo">Photo <span style="font-weight:400;">(optional)</span></label>
+          <input id="su-photo" name="photo" type="file" accept="image/*" />
+        </div>
+
+        <div class="field">
+          <label for="su-password">Password</label>
+          <input id="su-password" name="password" type="password" required autocomplete="new-password" minlength="6" />
+          <div class="field-hint">At least 6 characters.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Create account</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script src="/js/brand.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+</body>
+</html>
